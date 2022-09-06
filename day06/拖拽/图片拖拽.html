@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 200px;
+        /* height: 100px; */
+        /* background-color: red; */
+        border: 2px solid red;
+        position: absolute;
+        left: 150px;
+        top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="box" src="./img/1.jpg" />
+    <!-- 图片浏览器默认不能拖拽（浏览器默认行为==> 阻止浏览器默认行为）  拖拽会自动打开图片进行预览 -->
+  </body>
+  <script>
+    var oBox = document.querySelector("#box");
+    // 鼠标在div身上按下
+    oBox.onmousedown = function (e) {
+      // 阻止默认行为
+      e.preventDefault();
+
+      // 获取鼠标的坐标点
+      console.log(e.clientX); // 水平坐标
+      console.log(e.clientY); // y坐标
+      // 鼠标距离元素边缘 在拖拽过程中 始终不变 =    鼠标坐标  -  盒子的左侧left值
+      //   console.log(oBox.offsetLeft);
+      console.log(oBox.offsetTop);
+      var disX = e.clientX - oBox.offsetLeft;
+      var disY = e.clientY - oBox.offsetTop;
+
+      // 文档 整个页面 添加鼠标移动事件
+      document.onmousemove = function (e) {
+        // div跟着走
+        // div.style.left =  当前鼠标的x坐标 - 固定距离
+        oBox.style.left = e.clientX - disX + "px";
+        oBox.style.top = e.clientY - disY + "px";
+      };
+      document.onmouseup = function () {
+        // 停止拖拽 取消移动事件
+        document.onmousemove = null;
+      };
+    };
+  </script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>元素拖拽</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    #box{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      top: 200px;
+      left: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+  </div>
+</body>
+<script>
+
+  var oBox = document.querySelector('#box');
+
+  //鼠标按下事件
+  oBox.onmousedown = function(e){
+
+    var disX = e.clientX - oBox.offsetLeft;
+    var disY = e.clientY - oBox.offsetTop;
+
+    //鼠标拖拽事件
+    document.onmousemove = function(e){
+      oBox.style.left = e.clientX - disX + 'px';
+      oBox.style.top = e.clientY - disY + 'px';
+    }
+    //鼠标取消拖拽
+    document.onmouseup = function(){
+      document.onmousemove = null;
+    }
+  }
+
+</script>
+</html>

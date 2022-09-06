@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        position: relative;
+        height: 100%;
+        /* 溢出隐藏 */
+        overflow: hidden;
+      }
+      /* css样式 */
+      ul li {
+        /* 列表项去掉 */
+        list-style: none;
+        position: absolute;
+      }
+      #box {
+        margin: 100px auto 0;
+        width: 330px;
+        height: 220px;
+        border: 1px solid black;
+        position: relative;
+      }
+      img {
+        /* inline-block 行内块 默认空白换行 空隙  */
+        display: block;
+      }
+      #box > a {
+        /* 文本修饰： 无  去掉下划线 */
+        text-decoration: none;
+        color: white;
+        position: absolute;
+        font-size: 30px;
+        top: 100px;
+        width: 50px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        line-height: 40px;
+        font-weight: lighter;
+      }
+      #box > a:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      a.left_arrow {
+        left: 0;
+      }
+      a.right_arrow {
+        right: 0;
+      }
+      #box p {
+        position: absolute;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        color: white;
+        line-height: 30px;
+      }
+      #box p.desc {
+        top: 0;
+      }
+      #box p.range {
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 结构 -->
+    <div id="box">
+      <ul>
+        <li>
+          <a href="#"><img src="./img/1.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./img/2.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./img/3.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./img/4.jpg" alt="" /></a>
+        </li>
+      </ul>
+      <p class="desc"></p>
+      <p class="range"></p>
+      <!-- #  空链接  鼠标点击的时候 会在当前页面跳转一次 刷新一次 -->
+      <!-- javascript:; 阻止当前链接进行跳转 -->
+      <!-- 作为 左右 箭头 -->
+      <a href="javascript:;" class="left_arrow">&lt;</a>
+      <a href="javascript:;" class="right_arrow">&gt;</a>
+    </div>
+  </body>
+  <script>
+    /* 
+    1  再练布局 html /css
+    2  js基础知识 点击  数组 for循环  if判断语句  简单用了一下函数
+    */
+    /* 
+     分析： 
+      点击 左右箭头  实现 图片切换
+    */
+
+    var left = document.querySelector(".left_arrow");
+    var right = document.querySelector(".right_arrow");
+    var aLi = document.querySelectorAll("li");
+    var desc = document.querySelector(".desc");
+    var range = document.querySelector(".range");
+
+    // 数组 大的仓库 里面很多数据
+    var arrText = ["水果蛋糕", "小蛋糕", "红豆蛋糕", "三个蛋糕"];
+    // console.log(arrText[2]);
+    console.log(aLi);
+    // 定义变量  统计切换的索引
+    var n = 0;
+    // for循环
+    fn();
+
+    // 点击右侧箭头 切换下一张
+    right.onclick = function () {
+      n++; // n:1
+      if (n > 3) {
+        n = 0;
+      }
+      fn();
+    };
+    // 点击左侧箭头 上一张切换
+    left.onclick = function () {
+      n--; // n:1
+      if (n < 0) {
+        n = 3;
+      }
+      fn();
+    };
+
+    // 函数简化 封装
+    function fn() {
+      for (var i = 0; i < aLi.length; i++) {
+        aLi[i].style.display = "none";
+      }
+      aLi[n].style.display = "block";
+      desc.innerHTML = arrText[n];
+      range.innerHTML = n + 1 + "/" + aLi.length;
+    }
+  </script>
+</html>
