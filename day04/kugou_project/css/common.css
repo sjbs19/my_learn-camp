@@ -1,0 +1,145 @@
+/* 公用的样式 */
+/* 做一个样式重置 reset.css
+p  h1 h2 h3  body(外边距margin: 8px)
+ul li ol li....
+*/
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,* {
+    margin: 0;
+    padding: 0;
+    /* 盒模型的计算方式：border-box content-box */
+    /* width:100px (内容宽度+ padding + border) */
+    box-sizing: border-box;
+}
+li {
+    /* 列表项 ： 无 */
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #818895;
+}
+button,input {
+    /* 外框线：设置为无 */
+    outline: none;
+    border: none;
+}
+/* 公用样式 */
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+/* 常见的清除浮动的方式 伪元素清除浮动 */
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+
+
+
+
+/* 写首页样式 */
+
+body {
+    background-color: #fbfbfe;
+}
+
+header {
+    /* rem 做单位 相对html的根字体大小的单位
+    html: font-size:20px 
+    1rem = 20px;
+    */
+    height: 6.25rem;
+    /* background-color: rgb(171, 206, 219); */
+    /* 固定定位 */
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: #fbfbfe;
+}
+
+header div.ad {
+    background-color: #fff;
+    /* 顶部内填充 */
+    padding-top: 1rem;
+    padding-left: .75rem;
+}
+header div.ad>img {
+    width: 4.75rem;
+    height: 1.35rem;
+}
+
+header div.ad button {
+    width:3.65rem;
+    height:1.25rem;
+    border-radius: .65rem;
+    border: none;
+    background-color: #01baff;
+    color: white;
+    text-align: center;
+    line-height:1.25rem;
+    font-size: .6rem;
+    position: relative;
+    top: -0.4rem;
+}
+header div.ad button img {
+    width: .85rem;
+    height: .75rem;
+    position: relative;
+    top: .2rem;
+    
+}
+header div.ad button.huiyuan {
+    width: 4.4rem;
+    background-color: #f1ca74;
+
+}
+
+header nav {
+    display: flex;
+    padding-top: 1.25rem;
+    padding-right: .75rem;
+    /* 主轴 水平方向 平均分布 */
+    justify-content: space-around;
+}
+
+header nav a {
+    /* 去掉下划线 */
+    font-size: .75rem;
+}
+header nav a.active {
+    color: #000000;
+    font-size: 1rem;
+    position: relative;
+    top: -0.25rem;
+    
+}
+header nav a.active::after {
+    position: absolute;
+    left: .85rem;
+    bottom: -0.25rem;
+    display: block;
+    content: "";
+    width: .25rem;
+    height: .25rem;
+    border-radius: 50%;
+    background-color:  #01baff;
+}
+header .search {
+    width: .9rem;
+    height: .9rem;
+    position: absolute;
+    right: 2px;
+    bottom: 26px;
+}
+
+
+main {
+    margin:6.25rem .75rem 0;
+    /* background-color:skyblue; */
+}

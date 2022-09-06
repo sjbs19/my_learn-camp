@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* body {
+        margin: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      dl {
+        margin: 0;
+      }
+      dd {
+        margin: 0;
+      } */
+      img {
+        /* display: block; */
+        float: left;
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+      }
+      span {
+        /* 显示类型 转换为 块级元素 */
+        display: block;
+        width: 100px;
+        height: 100px;
+      }
+      .btn {
+        width: 100px;
+        height: 50px;
+      }
+      button {
+        width: 50px;
+        height: 40px;
+      }
+      .clearfix::after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 上下外边距 默认16px -->
+    <!-- 默认 一级字体最大 字号依次变小  都是加粗的-->
+    <h1>一级标题</h1>
+    <h2>二级标题</h2>
+    <h3>三级标题</h3>
+    <h4>四级标题</h4>
+    <h5>五级标题</h5>
+    <h6>六级标题</h6>
+    <!-- 段落标签 外观常规 -->
+    <p>段落标签</p>
+    <!-- div -->
+    <div>无语义标签 盒子 块级元素 block</div>
+    <span>无语义标签 行内元素 inline </span>
+    <!-- 超链接标签 行内元素 inline -->
+    <a href="#">超链接标签</a>
+    <!-- 图片标签 行内块  inline-block -->
+    <div class="clearfix">
+      <img
+        width="50"
+        height="50"
+        src="./1.png"
+        alt="对图片解释和说明 kitty猫"
+      />
+      <img src="./1.png" alt="kitty猫" />
+      <img src="./1.png" alt="对图片解释和说明 kitty猫" />
+    </div>
+
+    <!-- 单纯倾斜 -->
+    <i>倾斜标签</i>
+    <!-- 外观倾斜 强调意义  -->
+    <em>倾斜标签</em>
+
+    <!-- 只是加粗 -->
+    <b>加粗标签</b>
+    <!-- 不但加粗 强调的意义 -->
+    <strong>加粗标签</strong>
+
+    <!-- 按钮 inline-block-->
+    <input class="btn" type="button" value="按钮1" />
+    <button>我是按钮</button>
+
+    <!-- 类似于div  属于块级元素 -->
+    <header>header头部</header>
+    <nav>nav</nav>
+    <main>main</main>
+    <section>section</section>
+    <article>article</article>
+    <aside>aside</aside>
+    <footer>footer</footer>
+    <!-- 文本框 -->
+    <input type="text" />
+    <!-- 密码框 -->
+    <input type="password" />
+
+    <!-- 无序列表 -->
+    <ul>
+      <li>fdsaf</li>
+      <li>fdsfsd</li>
+      <li>fdfsdf</li>
+      <li>fdsfsdf</li>
+    </ul>
+    <!-- 有序列表 -->
+    <ol>
+      <!-- list-item 类型 属于块级元素 -->
+      <li>dfdsf</li>
+      <li>fdsf</li>
+      <li>fdsf</li>
+      <li>fdsf</li>
+    </ol>
+
+    <dl>
+      <dt>列表标题</dt>
+      <dd>列表内容</dd>
+      <dd>列表内容</dd>
+      <dd>列表内容</dd>
+    </dl>
+
+    <table>
+      <tr>
+        <td>11</td>
+        <td>222</td>
+        <td>333</td>
+      </tr>
+      <tr>
+        <td>444</td>
+        <td>5555</td>
+        <td>666</td>
+      </tr>
+      <tr>
+        <td>666</td>
+        <td>fd</td>
+        <td>fdfsd</td>
+      </tr>
+      <tr>
+        <td>fdfds</td>
+        <td>fsdf</td>
+        <td>fdf</td>
+      </tr>
+    </table>
+
+    <!-- 
+        display: 
+        块级元素 block:
+          h1~h6 p  div header footer section
+          main article aside nav ul ol dl dt dd li form
+           
+        行内元素inline : 
+            span a  i  strong em b 
+        行内块元素inline-block ： 
+             img input button
+        table类型：
+             table标签  ====> 块级元素
+        table-cell单元格类型：   
+             td th
+
+        flex:  弹性盒
+
+
+        块级元素：
+           独占一行 默认宽度和父级元素一样 撑开 100% 
+           高度为0  由内容撑开
+           可以直接设置宽高width  height
+           可以设置margin 和 padding
+        行内元素：
+            允许和其他元素并列一排
+            宽度和高度默认为0  由内容撑开
+            不能设置宽度高度（不生效）
+            不能设置上下margin 上下padding
+        行内块元素：
+            允许和其他元素并列一排
+            默认宽度和高度由元素默认样式决定 <img src="" /> button input
+            可以设置宽度和高度
+            默认会有一个空隙 （空白换行 默认解析为一个空隙）
+    -->
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        /* 行内元素 默认宽高为0 */
+        background: url("./img/jd-sprites.png");
+        /* 调整它的背景位置 x水平方向 调整left左侧偏移量  y 垂直方向 top值偏移量  */
+        background-position: -166px 0;
+        width: 32px;
+        height: 32px;
+        display: block;
+        /* border: 1px solid black; */
+      }
+      i {
+        display: block;
+        width: 55px;
+        height: 52px;
+        background: url("./img/jd-sprites.png"), #000;
+        background-position: -62px -60px;
+      }
+      b {
+        display: block;
+        width: 16px;
+        height: 16px;
+        background: url("./img/jd-sprites.png");
+        /* 背景图大小 px 百分比  cover contain */
+        background-size: 200px 200px;
+        background-position: -83px 0;
+      }
+      /*  */
+    </style>
+  </head>
+  <body>
+    <span></span>
+    <i></i>
+    <b></b>
+  </body>
+</html>

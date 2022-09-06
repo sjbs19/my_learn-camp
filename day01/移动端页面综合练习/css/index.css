@@ -1,0 +1,140 @@
+/* 首页样式文件 */
+* {
+    margin: 0;
+    padding: 0;
+    /* 盒模型 设置 border-box */
+    box-sizing: border-box;
+}
+body {
+    background-color:#f1f1f1;
+}
+
+header.header_nav {
+    height: 44px;
+    padding-left: 42px;
+    padding-right: 55px;
+    /* 固定定位 */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+header.header_nav a {
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    
+}
+header.header_nav a i {
+    font-size: 20px;
+}
+header.header_nav a.menu {
+    top: 5px;
+    left: 8px;
+    /* flex弹盒子 */
+    display: flex;
+    flex-direction: column;
+
+}
+header.header_nav a.cart {
+    right: 12px;
+    top: 10px;
+}
+header.header_nav input {
+    margin-top: 8px;
+    width: 100%;
+    /* 圆角 */
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    background-color: #fff;
+    /* 文本缩进 */
+    text-indent: 11px;
+}
+header.header_nav b {
+    position: absolute;
+    right: 62px;
+    top: 12px;
+    font-size: 20px;
+    color: #8c8f94;
+}
+/* ======================== */
+/* 轮播图区域 */
+.banner {
+    overflow: hidden;
+    /* 相对定位 */
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.banner ul  {
+    width: 1000%;
+}
+.banner ul li {
+    width: 10%;
+    float: left;
+}
+.banner a img {
+    width: 100%;
+    /* inline-block 类型 默认空行缝隙 */
+    display: block;
+}
+.banner ol.nav {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.banner ol.nav li {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 3px;
+    border: 1px solid white;
+    float: left;
+}
+
+.banner ol.nav li.active {
+    background-color: #fff;
+}
+
+/* 产品样式 */
+.product {
+    margin: 10px 5px;
+    background-color: #fff;
+    display: flex;
+    /* flex盒子进行换行 */
+    flex-wrap: wrap;
+    padding-bottom: 8px;
+}
+.product  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    text-decoration: none;
+    color: #3c4145;
+    font-size: 12px;
+    margin-top: 10px;
+}
+/* 细节 flex弹性盒 css3布局方式 实现响应式布局 在移动端用的比较多 */
+.product  a img {
+    width: 50px;
+    height: 50px;
+}
+.product  a  span {
+    margin-top: 5px;
+}
+
+
+
+
+
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}

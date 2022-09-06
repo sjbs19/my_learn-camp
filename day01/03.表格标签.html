@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 5px solid black;
+            border-collapse:collapse;
+            margin: 50px;
+        }
+        /* 单元格 */
+        td,th {
+            border: 1px solid black;
+            padding: 10px;
+            /* 文本居中 */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 表格标签 -->
+    <table>
+        <!-- 专门用来写表格标题的 -->
+        <caption>课程表</caption>
+        <!-- 表格头部 -->
+        <thead>
+            <tr>
+                <!-- rowspan  colspan -->
+                <th colspan="2">课程</th>
+                <!-- <th>222</th> -->
+                <th>333</th>
+                <th>444</th>
+            </tr>
+        </thead>
+       <!-- tbody表格主体 -->
+       <tbody>
+        <tr>
+            <td rowspan="3">111</td>
+            <td>222</td>
+            <td colspan="2" rowspan="2">333</td>
+            <!-- <td>444</td> -->
+        </tr>
+        <tr>
+            <!-- <td>111</td> -->
+            <td>222</td>
+            <!-- <td>333</td>
+            <td>444</td> -->
+        </tr>
+        <tr>
+            <!-- <td>111</td> -->
+            <td>222</td>
+            <td>333</td>
+            <td>444</td>
+        </tr>
+       </tbody>
+       <!-- 表格底部 -->
+       <tfoot>
+        <tr>
+            <td>111</td>
+            <td>222</td>
+            <td>333</td>
+            <td>444</td>
+        </tr>
+       </tfoot>
+    </table>
+</body>
+</html>

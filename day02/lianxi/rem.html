@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 移动端的视口设置  让页面宽度980 等于 设备宽度 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* html {
+        font-size: 15px;
+      } */
+      body {
+        font-size: 12px;
+      }
+      #box {
+        font-size: 10px;
+        /* 1rem: 20px */
+        /* px===>rem */
+        /* 143px 146px */
+        /* 咱们用一个插件 vscode cssrem 只是一个工具而已 转换 px===> rem */
+        width: 7.15rem;
+        height: 7.3rem;
+        background-color: red;
+        /* margin: 100px; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        绝对单位
+        px  像素  1px ===> 1个头发丝
+        pt  早期苹果移动设备上的一个单位 点1pt
+        相对单位
+        百分比 a: width:50% ===>参考父级
+        em 1em===> 参考自身或者父级元素的字体大小 
+
+        1em 默认是16px 浏览器默认字体大小是16px
+
+        em参考对象会随着当前元素或者父级元素的字体大小变化 而变化
+
+        rem: 永远参考一个对象 html根元素的font-size
+
+        页面中所有的尺寸 都采用rem单位
+
+        都会跟着html根字体大小走
+
+        但是这样也不会立马就会适配
+        还需要做两个操作：
+        1. 视口设置
+        2。让html根字体大小 随着设备的可视区域宽度变化而变化
+
+        
+        vw/ vh 相对单位  响应式尺寸
+    -->
+
+    <div id="box">
+      <a href="#">打开百度</a>
+    </div>
+  </body>
+  <script>
+    // 获取页面可视区域的宽度
+    var iw = document.documentElement.clientWidth; // 320  375 390
+    console.log(iw);
+    // 通过js 让html根字体大小 随着可视区域的宽度变化
+    document.querySelector("html").style.fontSize = iw / 16 + "px";
+  </script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* css 简单样式重置 默认的标签的外边距和内填充 body默认8px外边距  p h1 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #box {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        border-radius: 50%;
+        margin: 100px auto 0;
+        position: relative;
+        /* 透视 */
+        /* perspective: 800px; */
+        /* 让当前盒子呈现出一个3d立体空间 */
+        transform-style: preserve-3d;
+        animation: move 2s linear infinite;
+      }
+      #box div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 200px;
+        color: white;
+      }
+      /* transform: translate(x,y)位移   旋转 rotateX() rotateY()  rotateZ()  rotate3d(x,y,z) */
+      .left {
+        background-color: rgba(255, 0, 0, 0.5);
+        transform: rotateY(90deg) translateZ(-100px);
+      }
+      .right {
+        background-color: rgba(255, 255, 0, 0.5);
+        transform: rotateY(90deg) translateZ(100px);
+      }
+      .up {
+        background-color: rgba(255, 0, 255, 0.5);
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      .bottom {
+        background-color: rgba(0, 255, 255, 0.5);
+        transform: rotateX(90deg) translateZ(-100px);
+      }
+      .front {
+        background-color: rgba(0, 255, 0, 0.5);
+        transform: translateZ(100px);
+      }
+      .back {
+        background-color: rgba(0, 0, 255, 0.5);
+        transform: translateZ(-100px);
+      }
+
+      /* css3 关键帧动画 */
+      @keyframes move {
+        from {
+          transform: rotateX(0deg) rotateY(0deg);
+        }
+        to {
+          transform: rotateX(360deg) rotateY(180deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 大盒子 -->
+    <div id="box">
+      <div class="left">left</div>
+      <div class="right">right</div>
+      <div class="up">up</div>
+      <div class="bottom">bottom</div>
+      <div class="front">front</div>
+      <div class="back">back</div>
+    </div>
+  </body>
+</html>

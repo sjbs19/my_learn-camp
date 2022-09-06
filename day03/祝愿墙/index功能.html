@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0 auto;
+        padding: 0px;
+        font-size: 12px;
+        background: url(images/bg.gif) repeat center 36px;
+        text-align: center;
+        background-color: #c30230;
+      }
+
+      #content {
+        margin: 0 auto;
+        width: 960px;
+        background: url(images/content_bg.jpg) no-repeat left top;
+        height: 627px;
+        position: relative;
+      }
+
+      #content .tip1 {
+        position: absolute;
+        width: 227px;
+        left: 200px;
+        top: 100px;
+      }
+
+      #content .tip1 .tip_h {
+        background: url(images/tip1_h.gif) no-repeat left top;
+      }
+
+      #content .tip1 .tip_h {
+        width: 227px;
+        padding-top: 45px;
+        height: 23px;
+        text-align: left;
+        cursor: move;
+      }
+
+      #content .tip1 .tip_c {
+        background: url(images/tip1_c.gif) repeat-y;
+      }
+
+      #content .tip1 .tip_c {
+        width: 200px;
+        padding-left: 12px;
+        padding-right: 15px;
+        min-height: 40px;
+        text-align: left;
+        line-height: 20px;
+        max-height: 160px;
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow: hidden;
+      }
+
+      #content .tip1 .tip_f {
+        background: url(images/tip1_f.gif) no-repeat left top;
+      }
+
+      #content .tip1 .tip_f {
+        width: 227px;
+        height: 53px;
+        padding-top: 20px;
+      }
+
+      #content .close,
+      #content .close2 {
+        float: left;
+        font-size: 12px;
+        cursor: pointer;
+        color: #000000;
+      }
+
+      .clr {
+        clear: both;
+        overflow: auto;
+        display: block;
+        height: 0px;
+      }
+
+      #content .icon {
+        float: left;
+        width: 35px;
+        padding-left: 15px;
+        height: 35px;
+        text-align: center;
+      }
+
+      #content .name {
+        float: right;
+        padding-right: 15px;
+        text-align: right;
+        font-size: 14px;
+        line-height: 35px;
+        color: #c0f;
+      }
+
+      #content .num {
+        float: left;
+        padding-left: 7px;
+        width: 195px;
+      }
+
+      #btn {
+        width: 140px;
+        height: 60px;
+        font-size: 20px;
+        position: fixed;
+        top: 200px;
+        left: 10px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">显示小纸条</button>
+    <!-- 祝愿墙 -->
+    <div id="content">
+      <!-- 小纸条 -->
+      <!-- <div class="tip1">
+        <div class="tip_h" title="双击关闭纸条">
+          <div class="num">2016-02-17 00:00:00</div>
+          <div class="close" title="关闭纸条">×</div>
+          <div class="clr"></div>
+        </div>
+        <div class="tip_c">今天你拿苹果支付了么</div>
+        <div class="tip_f">
+          <div class="icon">
+            <img src="images/bpic_1.gif" alt="" title="" />
+          </div>
+          <div class="name">mahu</div>
+          <div class="clr"></div>
+        </div>
+      </div> -->
+    </div>
+  </body>
+  <script>
+    /* 
+     第一步： 分析
+     1 单击按钮  ---- 生成一堆纸条 （1 创建标签 2 添加创建好的标签 到页面里面去）
+         1.1 每个纸条的 位置 是随机的  不一样 Math.random()
+         1.2 数据不一样  （姓名 留言内容 日期）
+      2 点击关闭x  删除当前这个小纸条
+     第二步 写代码
+    */
+    //模拟从数据库中获取的资源
+    // 前端 和 后端交互  获取数据 请求 响应
+    var messages = [
+      {
+        id: 1,
+        name: "mahu",
+        content: "今天你拿苹果支付了么",
+        time: "2016-02-17 00:00:00",
+      },
+      {
+        id: 2,
+        name: "haha",
+        content: "今天天气不错，风和日丽的",
+        time: "2016-02-18 12:40:00",
+      },
+      {
+        id: 3,
+        name: "jjjj",
+        content: "常要说的事儿是乐生于苦",
+        time: "2016-03-18 12:40:00",
+      },
+      {
+        id: 4,
+        name: "9.8的妹纸",
+        content: "把朋友家厕所拉堵了 不敢出去 掏了半小时了都",
+        time: "2016-03-18 12:40:00",
+      },
+      {
+        id: 5,
+        name: "雷锋ii.",
+        content: "元宵节快乐",
+        time: "2016-02-22 12:40:00",
+      },
+      {
+        id: 6,
+        name: "哎呦哥哥.",
+        content:
+          "据说今晚央视的元宵晚会导演和春晚导演是同一个人，真是躲得过初一，躲不过十五。",
+        time: "2016-02-22 01:30:00",
+      },
+      {
+        id: 7,
+        name: "没猴哥，不春晚",
+        content:
+          "班主任:“小明，你都十二岁了，还是三年级，不觉得羞愧吗”？。小明:“一点也不觉得，老师你都四十多岁了，不也是年年在三年级混日子吗？羞愧的应该是你”。老师:……",
+        time: "2016-02-22 01:30:00",
+      },
+      {
+        id: 8,
+        name: "哎呦杰杰.",
+        content:
+          "真搞不懂你们地球人，月亮有什么好看的，全是坑，还是对面那哥们好看，",
+        time: "2016-02-22 01:30:00",
+      },
+      {
+        id: 9,
+        name: "哎呦哎呦",
+        content: "今天哪里的烟花最好看！！？答：朋友圈。。。",
+        time: "2016-02-22 02:30:00",
+      },
+    ];
+
+    // 第二步 写代码
+    // 要想玩 先获取元素
+    // 语法次要的  编程思维
+
+    // 先获取元素
+    var oBtn = document.querySelector("#btn");
+    // 获取祝愿墙 content的div
+    var oCon = document.querySelector("#content");
+
+    var n = 1;
+
+    console.log(oBtn);
+    // 给按钮添加一个点击事件 触发一个函数
+    oBtn.onclick = function () {
+      // 做事情 生成一堆纸条 （1 创建标签 2 添加创建好的标签 到页面里面去）
+      // 循环 数组 中数据 有九个数据 循环九次 生成9个纸条
+      // 声明一个变量 初始化为空字符串
+      // 先清空祝愿墙里面的所有内容
+      oCon.innerHTML = "";
+
+      for (var i = 0; i < messages.length; i++) {
+        // 通过js中的DOM创建方法来创建div.tip1
+        var oDiv = document.createElement("div");
+        // 给创建好的oDiv添加类名
+        oDiv.className = "tip1";
+        // 随机位置  left: 200px; top: 100px;
+        //   0～1 之间的随机小数   0~960随机整数
+        oDiv.style.left = Math.round(Math.random() * (960 - 227)) + "px";
+        oDiv.style.top = Math.round(Math.random() * (627 - 241)) + "px";
+        // 把一堆字符串 塞到oDiv里面
+        console.log(messages[i]);
+        oDiv.innerHTML = `
+        <div class="tip_h" title="双击关闭纸条">
+          <div class="num">${messages[i].time}</div>
+          <div class="close" title="关闭纸条">×</div>
+          <div class="clr"></div>
+        </div>
+        <div class="tip_c">${messages[i].content}</div>
+        <div class="tip_f">
+          <div class="icon">
+            <img src="images/bpic_1.gif" alt="" title="" />
+          </div>
+          <div class="name">${messages[i].name}</div>
+          <div class="clr"></div>
+        </div>
+        `;
+        // 把创建好oDiv 放到oCon （墙）
+        oCon.appendChild(oDiv);
+        // 功能2 删除 关闭操作
+        var oClose = oDiv.querySelector(".close");
+        console.log(oClose);
+        oClose.onclick = function () {
+          this.parentNode.parentNode.remove();
+        };
+        // // 点击任何一个小纸条 应该让小纸条的层级提高 z-index
+        oDiv.onclick = function () {
+          this.style.zIndex = n;
+          n++; // 99999
+        };
+      }
+    };
+  </script>
+</html>

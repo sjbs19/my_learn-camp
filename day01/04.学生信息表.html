@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            height: 270px;
+            border: 5px solid black;
+            /* 边框合并 */
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+        }
+        th,td {
+            border: 1px solid black;
+        }
+        thead tr {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>学生信息表</caption>
+        <thead>
+            <tr>
+                <th colspan="3">学生基本信息</th>
+                <!-- <th></th>
+                <th></th> -->
+                <th colspan="2">成绩</th>
+                <!-- <th></th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>专业</td>
+                <td>课程</td>
+                <td>分数</td>
+            </tr>
+            <tr>
+                <td>球球</td>
+                <td>男</td>
+                <td rowspan="2">计算机</td>
+                <td rowspan="3">程序设计</td>
+                <td>78</td>
+            </tr>
+            <tr>
+                <td>楠楠</td>
+                <td>女</td>
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <td>66</td>
+            </tr>
+            <tr>
+                <td>小明</td>
+                <td>男</td>
+                <td>会计</td>
+                <!-- <td></td> -->
+                <td>93</td>
+            </tr>
+            <tr>
+                <td>小梅</td>
+                <td>女</td>
+                <td>建筑</td>
+                <td>建筑设计</td>
+                <td>72</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

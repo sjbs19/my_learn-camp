@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./img/0.JPG" alt="" />
+    <img src="./img/0.JPG" alt="" />
+    <img src="./img/0.JPG" alt="" />
+    <img src="./img/0.JPG" alt="" />
+    <img src="./img/0.JPG" alt="" />
+    <img src="./img/0.JPG" alt="" />
+    <img src="./img/0.JPG" alt="" />
+    <img src="./img/0.JPG" alt="" />
+  </body>
+  <script>
+    /* 
+      js基础知识
+      
+      简单函数封装以及调用
+      定时器
+      获取系统时间
+      循环语句for
+      判断语句 if...else  三目运算
+      获取标签元素的方法 getElementsByTagName
+      字符串拼接
+    */
+
+    // 获取所有图片
+    var aImg = document.getElementsByTagName("img");
+    console.log(aImg);
+
+    function zero(m) {
+      // if(m<10){
+      //    return  "0"+m;
+      // }else {
+      //    return m
+      // }
+      // 三元运算/ 三目运算
+      return m < 10 ? "0" + m : m;
+    }
+
+    function timeFn() {
+      // 获取小时分钟秒
+      var mydate = new Date();
+      var h = mydate.getHours();
+      var m = mydate.getMinutes();
+      var s = mydate.getSeconds();
+
+      var str = zero(h) + ":" + zero(m) + ":" + zero(s);
+      //   document.body.innerHTML = str; // "09:51:03"
+
+      for (var i = 0; i < aImg.length; i++) {
+        // str[3]
+        if (i == 2 || i == 5) {
+          // 处理一下 :.jpg ===> colon.gif
+          aImg[i].src = "./img/colon.gif";
+        } else {
+          aImg[i].src = "./img/" + str[i] + ".JPG";
+        }
+      }
+    }
+    timeFn();
+    setInterval(timeFn, 1000);
+  </script>
+</html>

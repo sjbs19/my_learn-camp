@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box div {
+        /* width: 100%; */
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border: 1px solid black;
+        /* display: inline-block; */
+        float: left;
+      }
+      #box div:nth-child(3) {
+        float: right;
+      }
+      #box::after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+      #box2 {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+      }
+      #box2 span {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        float: left;
+      }
+      /* p {
+        clear: right;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- （1）浮动以后使元素脱离了文档流（在页面中不占据位置）
+        （2）浮动是碰到父元素的边框或者浮动元素的边框就会停止
+        （3）浮动不会重叠
+        （4）浮动只有左右浮动，没有上下浮动
+        （5）浮动以后块级元素在同一行显示，行内元素可以设置宽高 行内元素浮动之后 会 块级化
+        （6）元素没有设置宽度和高度时，宽度为内容撑开 -->
+
+    <div id="box">
+      <div>1111</div>
+      <div>2222</div>
+      <div>333</div>
+      <!-- <p>fdsfsdfds</p> -->
+    </div>
+    <p>ppppppppp</p>
+    <span>spanspns</span>
+    <div id="box2"><span>1111</span><span>222</span><span>3333</span></div>
+  </body>
+</html>

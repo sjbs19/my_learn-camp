@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 300px;
+        height: 200px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        /* 上边框去掉 */
+        border-top: none;
+      }
+      a {
+        /* 文本修饰： 无==》下划线去掉 */
+        text-decoration: none;
+        /* 文字颜色 */
+        color: #404040;
+      }
+      h3 {
+        margin: 0;
+        height: 40px;
+      }
+
+      h3 a {
+        /* a属于行内元素inline 设置宽高无效  转换为块级元素*/
+        display: block;
+        width: 50%;
+        height: 40px;
+        font-size: 16px;
+        /* 去掉文字加粗 */
+        font-weight: normal;
+        background-color: #efeeee;
+        float: left;
+        text-align: center;
+        /* 行高 等于高度 垂直方向居中*/
+        line-height: 40px;
+      }
+      h3 a.active {
+        background-color: #fff;
+        color: red;
+        font-weight: bold;
+        /* 上边框 红色粗一点 */
+        border-top: 2px solid red;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      ul li {
+        /* list-style: none; */
+        font-size: 14px;
+        width: 260px;
+        line-height: 30px;
+        /* 单行文本溢出 显示省略号 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: url("./img/bj.png") no-repeat left center;
+        background-size: 5px 5px;
+        padding-left: 10px;
+      }
+      #box div {
+        padding: 10px 20px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Snipaste  https://www.snipaste.com/download.html -->
+    <div id="box">
+      <h3><a href="#" class="active">公益·传媒</a><a href="#">态度营销</a></h3>
+      <div style="display: block">
+        <ul>
+          <li>
+            <a href="#">[公益]网易向杭州捐赠首批4000件抗疫物资</a>
+          </li>
+          <li><a href="#">[公益]关注罕见病</a></li>
+          <li><a href="#">[传媒] 网易连签法国队和阿根廷队</a></li>
+          <li><a href="#">[传媒] 营收全面拉胯 腾讯如何自救？</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <a href="#">再创佳绩！2019 ECI Awards,网易斩获3金2银1铜</a>
+          </li>
+          <li>
+            <a href="#">【网易态度公开课】维意定制欧阳熙：捕捉下一个风口</a>
+          </li>
+          <li>
+            <a href="#"
+              >“睿享生活，未来可圈”网易传媒与中国广告协会战略合作发布会在</a
+            >
+          </li>
+          <li>
+            <a href="#">戛纳红毯究竟有多长？—戛纳创意节最全迷惑问题大赏</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    // 1 分析 功能
+    //   鼠标移动到a标签标题身上  让对应的标题加上active 类 并且让对应的标题的内容div显示出来 让其他div隐藏
+    // 2 写代码
+    //   2.1 要想玩 先获取元素
+    var aA = document.querySelectorAll("h3 a");
+    var aDiv = document.querySelectorAll("#box>div");
+    console.log(aDiv); // 集合 类数组 [div, div]
+
+    // console.log(aA); 集合 里面有两个a
+    // 循环
+    // 选项卡案例
+    for (var i = 0; i < aA.length; i++) {
+      // mouseover 鼠标移上事件
+      // click 点击 单击事件
+      // mouseout  鼠标移出事件
+      aA[i].index = i; // aA[0].xyz = 0;  aA[1].xyz = 1;
+      aA[i].onmouseover = function () {
+        // 让对应的标题加上active 类 并且让对应的标题的内容div显示出来 让其他div隐藏
+        console.log(this);
+        // 暴力清除
+        for (var j = 0; j < aA.length; j++) {
+          aA[j].className = "";
+          aDiv[j].style.display = "none";
+        }
+        this.className = "active";
+        // console.log(i); // 2
+        // 曲线救国
+        aDiv[this.index].style.display = "block";
+      };
+    }
+
+    // for(var i = 0; i < 5; i++) {
+    //     console.log(i); // 0  1  2 3 4
+    // }
+
+    // console.log(i); // 5
+  </script>
+</html>

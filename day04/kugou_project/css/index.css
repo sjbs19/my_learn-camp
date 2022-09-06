@@ -1,0 +1,128 @@
+
+/* 广告ad1 */
+
+
+.ad1 {
+    width: 14.5rem;
+    height: 3.55rem;
+    margin: 0 auto 1.8rem;
+    display: block;
+}
+
+main .new_song_title h3{
+    font-size: .8rem;
+    color: #000000;
+}
+main .new_song_title a {
+    font-size: .6rem;
+    line-height: 1.125rem;
+}
+main section {
+    margin-top: .65rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+main section div  img {
+    width: 4.6rem;
+    height: 4.6rem;
+    border-radius: .5rem;
+}
+
+main section div h4 {
+    color: #000000;
+    font-size: .55rem;
+    font-weight: normal;
+}
+main section div p {
+    font-size: .6rem;
+    color: #818895;
+    width: 4.6rem;
+    /* 单行溢出隐藏 省略号 */
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; */
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+} 
+main section div {
+    position: relative;
+}
+main section.hot div span {
+    position: absolute;
+    right: 0;
+    padding: 0 .15rem;
+    bottom: 2rem;
+    color: white;
+    text-align: right;
+    font-size: 10px;
+    line-height: 1.2rem;
+    backdrop-filter: blur(2px);
+    background: url(../img/icon_play_white.png) .15rem no-repeat,rgba(75, 84, 91, 0.6);
+    background-size: .6rem .6rem;
+    width: 3.3rem;
+    height: 1.2rem;
+    border-radius: .5rem;
+}
+
+main section.hot div p {
+    color: #000;
+    -webkit-line-clamp: 2;
+}
+main .hot_song {
+    margin-top: 1.7rem;
+}
+
+/* 酷狗热歌榜   */
+div.kugou_hot_list {
+    height: 5.15rem;
+    background-color: #edeef0;
+    margin-bottom: .5rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+}
+div.kugou_hot_list img {
+    width: 5.15rem;
+    height: 5.15rem;
+}
+div.kugou_hot_list ul {
+    padding-top: .9rem;
+    padding-left: .6rem;
+}
+
+div.kugou_hot_list ul li {
+    color: #828996;
+    font-size: .6rem;
+    margin-bottom: .5rem;
+}
+div.kugou_hot_list ul li  span {
+    color: #000;
+}
+/* 热门歌手样式 */
+div.hot_singer {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+div.hot_singer a {
+    display: flex;
+    width: 93px;
+    height: 6.7rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f2f5;
+    border-radius: .4rem;
+    flex-direction: column;
+}
+div.hot_singer a img {
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 50%;
+}
+div.hot_singer a  span {
+    font-size: .7rem;
+    margin-top: .4rem;
+    color: #000;
+}

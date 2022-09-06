@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 0 auto;
+            width: 600px;
+            border:1px solid black;
+        }
+        td {
+            border: 1px solid black;
+           
+        }
+        .last {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption><strong>学生信息表</strong></caption>
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>基本信息</legend>
+                    学生姓名:<input type="text">
+                    设置密码:<input type="password">
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>性别</legend>
+                    男生<input type="radio" name="sex">
+                    女生<input type="radio" name="sex">
+
+                    <hr>
+                    籍贯: <select>
+                        <option value="bj">北京</option>
+                        <option value="sh">上海</option>
+                        <option value="sz">深圳</option>
+                        <option value="hz">杭州</option>
+                    </select>
+                    <hr>
+                    自我介绍:
+                    <textarea cols="30" rows="10"></textarea>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>兴趣爱好:</legend>
+                    足球:<input type="checkbox">
+                    篮球:<input type="checkbox">
+                    动漫:<input type="checkbox">
+                    音乐:<input type="checkbox">
+                    电影:<input type="checkbox">
+                    <hr>
+                    上传照片:
+                    <input type="file">
+                </fieldset>
+               
+            </td>
+        </tr>
+        <tr>
+            <td class="last">
+                <input type="reset" value="重新填写">
+                <input type="submit" value="填好了">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

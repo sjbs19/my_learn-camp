@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的酷狗</title>
+    <!-- 引入外部样式 -->
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/newSong.css" />
+  </head>
+  <body>
+    <!-- 固定区域 -->
+    <!-- header 标签 头部 -->
+    <header>
+      <div class="ad">
+        <img src="./img/icon_kugou1.png" alt="logo" />
+        <button>下载酷狗</button>
+        <button class="huiyuan">
+          <img src="./img/icon_vip1.png" alt="icon" />
+          成为会员
+        </button>
+      </div>
+      <!-- nav标签 导航标签 -->
+      <nav>
+        <a href="./index.html">音乐</a>
+        <a href="./newSong.html" class="active">新歌</a>
+        <a href="#">排行</a>
+        <a href="#">歌单</a>
+        <a href="#">歌手</a>
+        <a href="#">听书</a>
+      </nav>
+      <img src="./img/icon_search_black.png" class="search" alt="" />
+    </header>
+    <!-- 中间主体内容全部放在main -->
+    <main>
+      <!-- 二级导航 -->
+      <nav>
+        <a href="#" class="active">华语</a>
+        <a href="#">欧美</a>
+        <a href="#">韩国</a>
+        <a href="#">日本</a>
+      </nav>
+      <p class="play_all clearfix">
+        <i class="fl"><img src="./img/play_icon.png" alt="" /></i>
+        <span class="fl">查看全部 <b>100</b></span>
+      </p>
+      <!-- 歌曲列表项 -->
+      <section class="song_list clearfix">
+        <span class="fl">1</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">2</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">3</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">4</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">5</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">6</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">1</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">2</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">3</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">4</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">5</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+      <section class="song_list clearfix">
+        <span class="fl">6</span>
+        <div class="fl">
+          <p class="song_name">海风吹</p>
+          <p class="singer_name">王源</p>
+        </div>
+        <img class="fr" src="./img/xin_icon.png" alt="" />
+      </section>
+    </main>
+  </body>
+  <script>
+    // 获取可视区域的宽度 iphone5 320   iphone678  375  iphon678Plus 414
+    var iW = document.documentElement.clientWidth;
+    // html: 20px 字体大小
+    // 插件cssrem  设置font-size: 20
+    document.querySelector("html").style.fontSize = iW / 16 + "px";
+  </script>
+</html>
