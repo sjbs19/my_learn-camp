@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 200px;
+      height: 30px;
+      border: 1px solid black;
+      position: relative;
+    }
+    .dian {
+      background-color: red;
+      height: 30px;
+      width: 0px;
+    }
+    #box p {
+      position: absolute;
+      right: -40px;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <div class="dian"></div>
+    <p>0%</p>
+  </div>
+  <button>点击开始充电</button>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+<script>
+  // 监听开始按钮的点击
+  $("button").one('click',function () {
+    // 进度条
+    fn();
+  });
+  //定时器方法
+  
+  // 进度条方法
+  function fn() {
+    var n = 0;
+    $(".dian").animate({
+      width: 200
+    },3000);
+    //定时器
+    var bar = setInterval(
+      function(){
+      var nowWidth = $(".dian").width();
+      n = nowWidth/2;
+
+      if(nowWidth > 66.7 && nowWidth < 133){
+        $(".dian").css('backgroundColor','orange')
+      }
+      if(nowWidth > 133 && nowWidth <= 200){
+        $(".dian").css('backgroundColor','green')
+      }
+      $('p').html(parseInt(n)+'%')
+      console.log(n,nowWidth);
+      // 监听进度条是否走完
+      if (nowWidth >= 200){
+        // 关闭定时器
+        clearInterval(bar);
+        console.log('定时器关闭了');
+      }
+    }, 100)
+  }
+  
+</script>
+</html>

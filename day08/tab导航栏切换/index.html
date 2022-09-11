@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    button {
+      background-color: orange;
+    }
+    div {
+      width: 300px;
+      height: 260px;
+      border: 1px solid black;
+      text-align: center;
+      line-height: 260px;
+      display: none;
+    }
+    button.active {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+    <button class="active">按钮一</button>
+    <button>按钮二</button>
+    <button>按钮三</button>
+    <div>内容一</div>
+    <div>内容二</div>
+    <div>内容三</div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+<script>
+  $('div').eq(0).show().siblings('div').hide();
+  $('button').mouseenter(function(){
+    $(this).addClass('active').siblings().removeClass('active');
+    $('div').eq($(this).index()).show().siblings('div').hide();
+  })
+</script>
+</html>

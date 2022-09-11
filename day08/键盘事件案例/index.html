@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      margin: 400px;
+      width: 500px;
+      height: 360px;
+      border: 1px solid black;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    当前将被的ketCode值为：<span></span>
+  </div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+<script>
+  //q:red w:orange e:skyblue r:lightcoral
+  $('body').keyup(function(e){
+    $('span').html(e.keyCode);
+    if(e.keyCode == 81){
+      $('#box').css('backgroundColor','red');
+    }else if(e.keyCode == 87){
+      $('#box').css('backgroundColor','orange');
+    }else if(e.keyCode == 69){
+      $('#box').css('backgroundColor','skyblue');
+    }else if(e.keyCode == 82){
+      $('#box').css('backgroundColor','lightcoral');
+    }else {
+      $('#box').css('backgroundColor','white');
+    }
+  })
+</script>
+</html>

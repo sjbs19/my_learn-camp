@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: black;
+    }
+    #box {
+      width: 1000px;
+      height: 1000px;
+      border: 1px solid white;
+      border-radius: 50%;
+      margin:50px auto;
+      position: relative;
+      /* animation: moveson1 2s linear infinite; */
+    }
+    section {
+      position: absolute;
+    }
+    .s2 {
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      animation: moveson1 2s linear infinite;
+    }
+    .s2 p {
+      width: 10px;
+      height: 10px;
+      background-color: skyblue;
+      position: relative;
+      left: 90px;
+      top: -5px;
+      border-radius: 50%;
+    }
+    .s1 {
+      width: 100px;
+      height: 100px;
+      /* background-color: yellow; */
+      background-image: radial-gradient(red, yellow);
+      box-shadow: 1px 1px 50px yellow;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 50%;
+    }
+    .s3 {
+      width: 500px;
+      height: 500px;
+      border: 1px solid white;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      background-size: 100% 100%;
+      animation: moveson1 8s linear infinite;
+    }
+    .s_img {
+      width: 500px;
+      height: 500px;
+      border: 1px solid white;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate(-50%,-50%);
+      background: url('./img/1.png') no-repeat;
+      background-size: 100% 100%;
+    }
+    .s3 p {
+      width: 30px;
+      height: 30px;
+      background-color: yellow;
+      position: relative;
+      left: 165px;
+      top: -5px;
+      border-radius: 50%;
+    }
+    .s4 {
+      width: 800px;
+      height: 800px;
+      border: 1px solid white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 50%;
+      animation: moveson1 15s linear infinite;
+    }
+    .s4 p {
+      width: 40px;
+      height: 40px;
+      background-color: blue;
+      position: relative;
+      left: 271px;
+      top: 20px;
+      border-radius: 50%;
+      animation: moveson1 2s linear infinite;
+    }
+    .s4 p i{
+      width: 10px;
+      height: 10px;
+      background-color: yellow;
+      position: relative;
+      border-radius: 50%;
+      left: 50px;
+      display: block;
+    }
+    #box .p1 {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: red;
+      left: 310px;
+    }
+    .s5 {
+      width: 1000px;
+      height: 1000px;
+      border-radius: 50%;
+      animation: moveson1 20s linear infinite;
+    }
+    @keyframes moveson1 {
+     0%{
+      transform:translate(-50%,-50%) rotate(0deg);
+     }
+     100%{
+      transform:translate(-50%,-50%) rotate(360deg);
+     }
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <section class="s1"></section>
+    <section class="s2"><p></p></section>
+    <section class="s_img"></section>
+    <section class="s3"><p></p></section>
+    <section class="s4"><p><i></i></p></section>
+    <section class="s5"><p class="p1"></p></section>
+  </div>
+</body>
+</html>

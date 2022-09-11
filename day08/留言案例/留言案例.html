@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>留言案例</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      margin: 300px;
+    }
+    .oUl {
+      width: 300px;
+      height: 260px;
+      border: 1px solid black;
+      list-style: none;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <ul class='oUl'>
+    </ul>
+    <select id="oSel">
+      <option value="张三">张三</option>
+      <option value="李四">李四</option>
+      <option value="小美">小美</option>
+      <option value="波子">波子</option>
+    </select>
+    <input type="text"><button>点击发送留言</button>
+  </div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+<script>
+
+  function fn(){
+    var input = $('input').val();
+    var liuyan = $(`
+    <li>
+      <strong>${$('#oSel').val()}:</strong>${input}
+      <a id='de' href = 'javascript:;'>删除</a>
+    </li>`)
+    if(input.trim() == ''){
+      alert('输入内容不能为空！');
+      return false;
+    }
+    $('.oUl').append(liuyan);
+    //清除内容
+    $('input').val('');
+    //输入框自动获取焦点
+    $('input').focus();
+  }
+  //点击事件
+  $('button').click(fn);
+
+  //删除功能
+  $('.oUl').on(
+    'click',
+    '#de',
+    function(){
+      $(this).parent().remove();
+    }
+  )
+
+  //键盘事件
+  $('input').keyup(function(e){
+    if(e.keyCode == 13){
+      fn();
+    }
+  })
+</script>
+</html>
